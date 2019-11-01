@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8C718DDA-C642-464A-8BE4-4BF2B11A1DA6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>App</RootNamespace>
+    <AssemblyName>App</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Application\BookService.cs" />
+    <Compile Include="Domain\Author.cs" />
+    <Compile Include="Domain\Book.cs" />
+    <Compile Include="Domain\Builders\Author\AuthorBuilder.cs" />
+    <Compile Include="Domain\Builders\Author\IBuildAuthor.cs" />
+    <Compile Include="Domain\Builders\Author\IWithAuthorId.cs" />
+    <Compile Include="Domain\Builders\Author\IWithBiography.cs" />
+    <Compile Include="Domain\Builders\Author\IWithBirthDate.cs" />
+    <Compile Include="Domain\Builders\Author\IWithFirstName.cs" />
+    <Compile Include="Domain\Builders\Author\IWithLastName.cs" />
+    <Compile Include="Domain\Builders\Book\BookBuilder.cs" />
+    <Compile Include="Domain\Builders\Book\IBuildBook.cs" />
+    <Compile Include="Domain\Builders\Book\IWithBookId.cs" />
+    <Compile Include="Domain\Builders\Book\IWithAuthors.cs" />
+    <Compile Include="Domain\Builders\Book\IWithIsbn.cs" />
+    <Compile Include="Domain\Builders\Book\IWithPublisher.cs" />
+    <Compile Include="Domain\Builders\Book\IWithReleaseDate.cs" />
+    <Compile Include="Domain\Builders\Book\IWithTitle.cs" />
+    <Compile Include="Domain\IAggregateRoot.cs" />
+    <Compile Include="Infrastructure\IAuthorRepository.cs" />
+    <Compile Include="Infrastructure\IBookRepository.cs" />
+    <Compile Include="Infrastructure\IDbEntity.cs" />
+    <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\IUnitOfWorkRepository.cs" />
+    <Compile Include="Infrastructure\Mappers\IDbToDomainMapper.cs" />
+    <Compile Include="Infrastructure\Mappers\IDomainToDbMapper.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>
