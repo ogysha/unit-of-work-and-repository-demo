@@ -98,9 +98,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\App\App.csproj">
+    <ProjectReference Include="..\Core\Core.csproj">
       <Project>{8c718dda-c642-464a-8be4-4bf2b11a1da6}</Project>
-      <Name>App</Name>
+      <Name>Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{8c980c77-4388-4567-b63e-03e10e63acd8}</Project>

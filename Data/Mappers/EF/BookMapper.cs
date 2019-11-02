@@ -1,4 +1,4 @@
-using App.Domain;
+using Core.Domain;
 using Db = Data.Entities.EF;
 
 namespace Data.Mappers.EF

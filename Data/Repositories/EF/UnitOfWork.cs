@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using App.Domain;
-using App.Infrastructure;
+using Core.Domain;
+using Core.Infrastructure;
 using Data.Entities.EF;
 
 namespace Data.Repositories.EF

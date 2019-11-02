@@ -1,7 +1,7 @@
 using System;
-using App.Application;
-using App.Domain.Builders.Author;
-using App.Domain.Builders.Book;
+using Core.Application;
+using Core.Domain.Builders.Author;
+using Core.Domain.Builders.Book;
 
 namespace Client
 {

@@ -1,6 +1,6 @@
-using App.Domain;
+using Core.Domain;
 
-namespace App.Infrastructure
+namespace Core.Infrastructure
 {
     public interface IAuthorRepository
     {

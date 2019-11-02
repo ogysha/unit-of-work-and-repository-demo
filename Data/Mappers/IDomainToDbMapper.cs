@@ -1,4 +1,4 @@
-using App.Domain;
+using Core.Domain;
 using Data.Entities;
 
 namespace Data.Mappers

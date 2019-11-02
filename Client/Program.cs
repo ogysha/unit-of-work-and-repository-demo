@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using App.Application;
+using Core.Application;
 using Autofac;
 using Client.Modules;
 
@@ -14,8 +14,8 @@ namespace Client
             builder.RegisterType<Application>();
             builder.RegisterType<BookService>();
 
-            builder.RegisterModule<EFModule>();
-            // builder.RegisterModule<MongoDbModule>();
+            // builder.RegisterModule<EFModule>();
+            builder.RegisterModule<MongoDbModule>();
 
             return builder.Build();
         }

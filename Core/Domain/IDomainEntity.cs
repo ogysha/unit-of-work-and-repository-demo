@@ -1,4 +1,4 @@
-namespace App.Domain
+namespace Core.Domain
 {
     public interface IDomainEntity
     {

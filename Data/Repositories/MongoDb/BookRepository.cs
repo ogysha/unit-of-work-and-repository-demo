@@ -1,5 +1,5 @@
-using App.Domain;
-using App.Infrastructure;
+using Core.Domain;
+using Core.Infrastructure;
 using Data.Mappers.MongoDb;
 using MongoDB.Driver;
 using Book = Data.Entities.MongoDb.Book;
@@ -20,26 +20,26 @@ namespace Data.Repositories.MongoDb
             _books = mongoClient.GetCollection<Book>(Name);
         }
 
-        public void Add(App.Domain.Book book)
+        public void Add(Core.Domain.Book book)
         {
             _unitOfWork.RegisterAdded(book, this);
         }
 
         public void PersistCreationOf(IAggregateRoot entity)
         {
-            var book = _bookMapper.ToDbEntity((App.Domain.Book) entity);
+            var book = _bookMapper.ToDbEntity((Core.Domain.Book) entity);
             _books.InsertOne(book);
         }
 
         public void PersistUpdateOf(IAggregateRoot entity)
         {
-            var updatedBook = _bookMapper.ToDbEntity((App.Domain.Book) entity);
+            var updatedBook = _bookMapper.ToDbEntity((Core.Domain.Book) entity);
             _books.ReplaceOne(book => book.Id == updatedBook.Id, updatedBook);
         }
 
         public void PersistDeletionOf(IAggregateRoot entity)
         {
-            var bookToDelete = _bookMapper.ToDbEntity((App.Domain.Book) entity);
+            var bookToDelete = _bookMapper.ToDbEntity((Core.Domain.Book) entity);
             _books.DeleteOne(book => book.Id == bookToDelete.Id);
         }
     }

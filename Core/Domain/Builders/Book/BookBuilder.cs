@@ -1,6 +1,6 @@
 using System;
 
-namespace App.Domain.Builders.Book
+namespace Core.Domain.Builders.Book
 {
     public class BookBuilder : IWithBookId, IWithTitle, IWithIsbn, IWithPublisher, IWithReleaseDate, IWithAuthor,
         IBuildBook

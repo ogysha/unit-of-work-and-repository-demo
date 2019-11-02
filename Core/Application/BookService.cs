@@ -1,7 +1,7 @@
-using App.Domain;
-using App.Infrastructure;
+using Core.Domain;
+using Core.Infrastructure;
 
-namespace App.Application
+namespace Core.Application
 {
     public class BookService
     {

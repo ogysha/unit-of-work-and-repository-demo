@@ -1,6 +1,6 @@
 using System;
 
-namespace App.Domain.Builders.Author
+namespace Core.Domain.Builders.Author
 {
     public class AuthorBuilder : IWithAuthorId, IWithFirstName, IWithLastName, IBuildAuthor
     {

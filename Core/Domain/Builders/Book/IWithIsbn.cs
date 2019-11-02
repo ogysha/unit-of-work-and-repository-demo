@@ -1,4 +1,4 @@
-namespace App.Domain.Builders.Book
+namespace Core.Domain.Builders.Book
 {
     public interface IWithIsbn
     {

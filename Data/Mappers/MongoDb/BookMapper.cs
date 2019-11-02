@@ -2,9 +2,9 @@ using Data.Entities.MongoDb;
 
 namespace Data.Mappers.MongoDb
 {
-    public class BookMapper : IDomainToDbMapper<Book, App.Domain.Book>
+    public class BookMapper : IDomainToDbMapper<Book, Core.Domain.Book>
     {
-        public Book ToDbEntity(App.Domain.Book domainEntity)
+        public Book ToDbEntity(Core.Domain.Book domainEntity)
         {
             return new Book
             {

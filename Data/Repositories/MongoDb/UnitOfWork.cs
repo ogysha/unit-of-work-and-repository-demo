@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using App.Domain;
-using App.Infrastructure;
+using Core.Domain;
+using Core.Infrastructure;
 using MongoDB.Driver;
 
 namespace Data.Repositories.MongoDb

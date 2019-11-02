@@ -1,6 +1,6 @@
 using System;
 
-namespace App.Domain
+namespace Core.Domain
 {
     public class Book : IAggregateRoot
     {

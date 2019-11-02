@@ -1,13 +1,13 @@
 using System;
 using System.Data.Entity;
 using System.Linq;
-using App.Domain;
-using App.Domain.Builders.Author;
-using App.Domain.Builders.Book;
-using App.Infrastructure;
+using Core.Domain;
+using Core.Domain.Builders.Author;
+using Core.Domain.Builders.Book;
+using Core.Infrastructure;
 using Data.Entities.EF;
 using Data.Mappers.EF;
-using Book = App.Domain.Book;
+using Book = Core.Domain.Book;
 
 namespace Data.Repositories.EF
 {
