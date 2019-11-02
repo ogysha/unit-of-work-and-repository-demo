@@ -13,11 +13,11 @@ namespace Data.Repositories.EF
 {
     public class BookRepository : IBookRepository, IUnitOfWorkRepository
     {
-        private readonly IBookMapper _bookMapper;
+        private readonly BookMapper _bookMapper;
         private readonly BookStoreDbContext _dbContext;
         private readonly IUnitOfWork _unitOfWork;
 
-        public BookRepository(IUnitOfWork unitOfWork, IBookMapper bookMapper,
+        public BookRepository(IUnitOfWork unitOfWork, BookMapper bookMapper,
             BookStoreDbContext dbContext)
         {
             _unitOfWork = unitOfWork;

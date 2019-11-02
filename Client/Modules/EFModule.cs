@@ -10,8 +10,8 @@ namespace Client.Modules
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<BookRepository>().AsImplementedInterfaces();
-            builder.RegisterType<BookMapper>().AsImplementedInterfaces();
-            builder.RegisterType<AuthorMapper>().AsImplementedInterfaces();
+            builder.RegisterType<BookMapper>().AsSelf();
+            builder.RegisterType<AuthorMapper>().AsSelf();
             builder.RegisterType<UnitOfWork>().AsImplementedInterfaces()
                 .InstancePerLifetimeScope();
             builder.Register(c => new BookStoreDbContext())

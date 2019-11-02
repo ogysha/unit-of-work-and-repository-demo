@@ -9,11 +9,11 @@ namespace Data.Repositories.MongoDb
     public class BookRepository : IBookRepository, IUnitOfWorkRepository
     {
         private const string Name = "Books";
-        private readonly IBookMapper _bookMapper;
+        private readonly BookMapper _bookMapper;
         private readonly IMongoCollection<Book> _books;
         private readonly IUnitOfWork _unitOfWork;
 
-        public BookRepository(IUnitOfWork unitOfWork, IBookMapper bookMapper, MongoClient mongoClient)
+        public BookRepository(IUnitOfWork unitOfWork, BookMapper bookMapper, MongoClient mongoClient)
         {
             _unitOfWork = unitOfWork;
             _bookMapper = bookMapper;

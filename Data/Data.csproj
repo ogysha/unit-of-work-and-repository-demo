@@ -92,11 +92,8 @@
     <Compile Include="Entities\MongoDb\Book.cs" />
     <Compile Include="Mappers\EF\AuthorMapper.cs" />
     <Compile Include="Mappers\EF\BookMapper.cs" />
-    <Compile Include="Mappers\EF\IAuthorMapper.cs" />
-    <Compile Include="Mappers\EF\IBookMapper.cs" />
     <Compile Include="Mappers\IDomainToDbMapper.cs" />
     <Compile Include="Mappers\MongoDb\BookMapper.cs" />
-    <Compile Include="Mappers\MongoDb\IBookMapper.cs" />
     <Compile Include="Migrations\201911020433414_Init.cs" />
     <Compile Include="Migrations\201911020433414_Init.Designer.cs">
       <DependentUpon>201911020433414_Init.cs</DependentUpon>

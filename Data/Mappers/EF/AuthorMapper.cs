@@ -3,7 +3,7 @@ using Db = Data.Entities.EF;
 
 namespace Data.Mappers.EF
 {
-    public class AuthorMapper : IAuthorMapper
+    public class AuthorMapper : IDomainToDbMapper<Db.Author, Author>
     {
         public Db.Author ToDbEntity(Author author)
         {

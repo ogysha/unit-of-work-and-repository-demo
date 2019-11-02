@@ -3,11 +3,11 @@ using Db = Data.Entities.EF;
 
 namespace Data.Mappers.EF
 {
-    public class BookMapper : IBookMapper
+    public class BookMapper : IDomainToDbMapper<Db.Book, Book>
     {
-        private readonly IAuthorMapper _authorMapper;
+        private readonly AuthorMapper _authorMapper;
 
-        public BookMapper(IAuthorMapper authorMapper)
+        public BookMapper(AuthorMapper authorMapper)
         {
             _authorMapper = authorMapper;
         }
