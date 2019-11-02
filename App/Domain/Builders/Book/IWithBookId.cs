@@ -1,6 +1,6 @@
 using System;
 
-namespace App.Domain.Builders
+namespace App.Domain.Builders.Book
 {
     public interface IWithBookId
     {

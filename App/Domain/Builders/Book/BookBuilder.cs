@@ -1,20 +1,26 @@
 using System;
 
-namespace App.Domain.Builders
+namespace App.Domain.Builders.Book
 {
     public class BookBuilder : IWithBookId, IWithTitle, IWithIsbn, IWithPublisher, IWithReleaseDate, IWithAuthor,
         IBuildBook
     {
-        private string _author;
+        private Domain.Author _author;
         private Guid _id;
         private string _isbn;
         private string _publisher;
         private DateTime _releaseDate;
         private string _title;
 
-        public Book Build()
+        public Domain.Book Build()
         {
-            return new Book(_id, _title, _releaseDate, _isbn, _publisher, _author);
+            return new Domain.Book(_id, _title, _releaseDate, _isbn, _publisher, _author);
+        }
+
+        public IBuildBook WithAuthor(Domain.Author author)
+        {
+            _author = author;
+            return this;
         }
 
         public IWithTitle WithId(Guid id)
@@ -50,12 +56,6 @@ namespace App.Domain.Builders
         public IWithIsbn WithTitle(string title)
         {
             _title = title;
-            return this;
-        }
-
-        public IBuildBook WithAuthor(string author)
-        {
-            _author = author;
             return this;
         }
 

@@ -4,7 +4,7 @@ namespace App.Domain
 {
     public class Book : IAggregateRoot
     {
-        public Book(Guid id, string title, DateTime releaseDate, string isbn, string publisher, string author)
+        public Book(Guid id, string title, DateTime releaseDate, string isbn, string publisher, Author author)
         {
             Id = id;
             Title = title;
@@ -24,7 +24,7 @@ namespace App.Domain
 
         public string Publisher { get; }
 
-        public string Author { get; }
+        public Author Author { get; }
 
         public override string ToString()
         {

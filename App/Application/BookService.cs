@@ -16,8 +16,6 @@ namespace App.Application
 
         public void AddToBookshelf(Book book)
         {
-            // here goes some validation....
-
             _booksRepository.Add(book);
             _unitOfWork.Commit();
         }

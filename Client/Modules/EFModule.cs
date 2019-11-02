@@ -11,6 +11,7 @@ namespace Client.Modules
         {
             builder.RegisterType<BookRepository>().AsImplementedInterfaces();
             builder.RegisterType<BookMapper>().AsImplementedInterfaces();
+            builder.RegisterType<AuthorMapper>().AsImplementedInterfaces();
             builder.RegisterType<UnitOfWork>().AsImplementedInterfaces()
                 .InstancePerLifetimeScope();
             builder.Register(c => new BookStoreDbContext())

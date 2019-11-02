@@ -5,7 +5,7 @@ namespace Data.Mappers
 {
     public interface IDomainToDbMapper<out TDbEntity, in TDomainEntity>
         where TDbEntity : IDbEntity
-        where TDomainEntity : IAggregateRoot
+        where TDomainEntity : IDomainEntity
     {
         TDbEntity ToDbEntity(TDomainEntity domainEntity);
     }

@@ -33,16 +33,24 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Application\BookService.cs" />
+    <Compile Include="Domain\Author.cs" />
     <Compile Include="Domain\Book.cs" />
-    <Compile Include="Domain\Builders\BookBuilder.cs" />
-    <Compile Include="Domain\Builders\IBuildBook.cs" />
-    <Compile Include="Domain\Builders\IWithAuthors.cs" />
-    <Compile Include="Domain\Builders\IWithBookId.cs" />
-    <Compile Include="Domain\Builders\IWithIsbn.cs" />
-    <Compile Include="Domain\Builders\IWithPublisher.cs" />
-    <Compile Include="Domain\Builders\IWithReleaseDate.cs" />
-    <Compile Include="Domain\Builders\IWithTitle.cs" />
+    <Compile Include="Domain\Builders\Author\AuthorBuilder.cs" />
+    <Compile Include="Domain\Builders\Author\IBuildAuthor.cs" />
+    <Compile Include="Domain\Builders\Author\IWithAuthorId.cs" />
+    <Compile Include="Domain\Builders\Author\IWithFirstName.cs" />
+    <Compile Include="Domain\Builders\Author\IWithLastName.cs" />
+    <Compile Include="Domain\Builders\Book\BookBuilder.cs" />
+    <Compile Include="Domain\Builders\Book\IBuildBook.cs" />
+    <Compile Include="Domain\Builders\Book\IWithAuthors.cs" />
+    <Compile Include="Domain\Builders\Book\IWithBookId.cs" />
+    <Compile Include="Domain\Builders\Book\IWithIsbn.cs" />
+    <Compile Include="Domain\Builders\Book\IWithPublisher.cs" />
+    <Compile Include="Domain\Builders\Book\IWithReleaseDate.cs" />
+    <Compile Include="Domain\Builders\Book\IWithTitle.cs" />
     <Compile Include="Domain\IAggregateRoot.cs" />
+    <Compile Include="Domain\IDomainEntity.cs" />
+    <Compile Include="Infrastructure\IAuthorRepository.cs" />
     <Compile Include="Infrastructure\IBookRepository.cs" />
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\IUnitOfWorkRepository.cs" />

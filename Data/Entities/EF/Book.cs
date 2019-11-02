@@ -19,7 +19,6 @@ namespace Data.Entities.EF
         [StringLength(255)]
         public string Publisher { get; set; }
 
-        [StringLength(255)]
-        public string Author { get; set; }
+        public Author Author { get; set; }
     }
 }

@@ -20,6 +20,6 @@ namespace Data.Entities.MongoDb
 
         public string Publisher { get; set; }
 
-        public string Author { get; set; }
+        public Author Author { get; set; }
     }
 }

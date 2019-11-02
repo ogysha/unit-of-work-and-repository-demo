@@ -14,8 +14,8 @@ namespace Client
             builder.RegisterType<Application>();
             builder.RegisterType<BookService>();
 
-            builder.RegisterModule<EFModule>();
-            // builder.RegisterModule<MongoDbModule>();
+            // builder.RegisterModule<EFModule>();
+            builder.RegisterModule<MongoDbModule>();
 
             return builder.Build();
         }

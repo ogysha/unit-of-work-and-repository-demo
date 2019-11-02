@@ -1,10 +1,11 @@
 using System;
+using System.Data.Entity;
 using System.Linq;
 using App.Domain;
-using App.Domain.Builders;
+using App.Domain.Builders.Author;
+using App.Domain.Builders.Book;
 using App.Infrastructure;
 using Data.Entities.EF;
-using Data.Mappers;
 using Data.Mappers.EF;
 using Book = App.Domain.Book;
 
@@ -48,9 +49,15 @@ namespace Data.Repositories.EF
 
         public Book FindById(Guid id)
         {
-            var bookEntity = _dbContext.Books.FirstOrDefault(b => b.Id == id);
-
+            var bookEntity = _dbContext.Books.Include(b => b.Author).FirstOrDefault(b => b.Id == id);
             if (bookEntity == null) return null;
+
+            var authorEntity = bookEntity.Author;
+            var author = AuthorBuilder.CreateNew()
+                .WithId(authorEntity.Id)
+                .WithFirstName(authorEntity.FirstName)
+                .WithLastName(authorEntity.LastName)
+                .Build();
 
             return BookBuilder.CreateNew()
                 .WithId(bookEntity.Id)
@@ -58,7 +65,7 @@ namespace Data.Repositories.EF
                 .WithIsbn13(bookEntity.Isbn)
                 .WithReleaseDate(bookEntity.ReleaseDate)
                 .WithPublisher(bookEntity.Publisher)
-                .WithAuthor(bookEntity.Author)
+                .WithAuthor(author)
                 .Build();
         }
     }

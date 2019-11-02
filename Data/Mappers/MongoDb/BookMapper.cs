@@ -9,7 +9,12 @@ namespace Data.Mappers.MongoDb
             return new Book
             {
                 BookId = domainEntity.Id,
-                Author = domainEntity.Author,
+                Author = new Author
+                {
+                    AuthorId = domainEntity.Author.Id,
+                    FirstName = domainEntity.Author.FirstName,
+                    LastName = domainEntity.Author.LastName
+                },
                 Isbn = domainEntity.Isbn,
                 Publisher = domainEntity.Publisher,
                 Title = domainEntity.Title,

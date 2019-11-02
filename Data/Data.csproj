@@ -84,11 +84,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\EF\Author.cs" />
     <Compile Include="Entities\EF\Book.cs" />
     <Compile Include="Entities\EF\BookStoreDbContext.cs" />
     <Compile Include="Entities\IDbEntity.cs" />
+    <Compile Include="Entities\MongoDb\Author.cs" />
     <Compile Include="Entities\MongoDb\Book.cs" />
+    <Compile Include="Mappers\EF\AuthorMapper.cs" />
     <Compile Include="Mappers\EF\BookMapper.cs" />
+    <Compile Include="Mappers\EF\IAuthorMapper.cs" />
     <Compile Include="Mappers\EF\IBookMapper.cs" />
     <Compile Include="Mappers\IDomainToDbMapper.cs" />
     <Compile Include="Mappers\MongoDb\BookMapper.cs" />
@@ -96,6 +100,10 @@
     <Compile Include="Migrations\201911020433414_Init.cs" />
     <Compile Include="Migrations\201911020433414_Init.Designer.cs">
       <DependentUpon>201911020433414_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911020547318_AddAuthor.cs" />
+    <Compile Include="Migrations\201911020547318_AddAuthor.Designer.cs">
+      <DependentUpon>201911020547318_AddAuthor.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\EF\BookRepository.cs" />
@@ -118,6 +126,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201911020433414_Init.resx">
       <DependentUpon>201911020433414_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911020547318_AddAuthor.resx">
+      <DependentUpon>201911020547318_AddAuthor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
