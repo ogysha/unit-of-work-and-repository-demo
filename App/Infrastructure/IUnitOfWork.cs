@@ -8,5 +8,6 @@ namespace App.Infrastructure
         void RegisterUpdated(IAggregateRoot entity, IUnitOfWorkRepository unitOfWorkRepository);
         void RegisterRemoved(IAggregateRoot entity, IUnitOfWorkRepository unitOfWorkRepository);
         void Commit();
+        void Rollback();
     }
 }

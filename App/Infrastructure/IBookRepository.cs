@@ -8,5 +8,6 @@ namespace App.Infrastructure
 
         // void Update(Book book);
         // Book FindById(Guid id);
+        // IEnumerable<Book> FindByReleaseDateBetween(DateTime startDate, DateTime endDate);
     }
 }
