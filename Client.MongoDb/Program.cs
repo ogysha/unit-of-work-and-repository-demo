@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Autofac;
+using Client.Common;
 using Client.MongoDb.Modules;
-using Core.Application;
 
 namespace Client.MongoDb
 {
@@ -11,8 +11,7 @@ namespace Client.MongoDb
         private static IContainer CompositionRoot()
         {
             var builder = new ContainerBuilder();
-            builder.RegisterType<Application>();
-            builder.RegisterType<BookService>();
+            builder.RegisterModule<AppCommonModule>();
             builder.RegisterModule<MongoDbModule>();
 
             return builder.Build();

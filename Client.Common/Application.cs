@@ -3,9 +3,9 @@ using Core.Application;
 using Core.Domain.Builders.Author;
 using Core.Domain.Builders.Book;
 
-namespace Client.MongoDb
+namespace Client.Common
 {
-    internal class Application
+    public class Application
     {
         private readonly BookService _bookService;
 
