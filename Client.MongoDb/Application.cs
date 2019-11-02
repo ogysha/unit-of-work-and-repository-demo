@@ -3,7 +3,7 @@ using Core.Application;
 using Core.Domain.Builders.Author;
 using Core.Domain.Builders.Book;
 
-namespace Client
+namespace Client.MongoDb
 {
     internal class Application
     {

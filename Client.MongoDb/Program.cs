@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using Core.Application;
 using Autofac;
-using Client.Modules;
+using Client.MongoDb.Modules;
+using Core.Application;
 
-namespace Client
+namespace Client.MongoDb
 {
     [ExcludeFromCodeCoverage]
     internal static class Program
@@ -13,8 +13,6 @@ namespace Client
             var builder = new ContainerBuilder();
             builder.RegisterType<Application>();
             builder.RegisterType<BookService>();
-
-            // builder.RegisterModule<EFModule>();
             builder.RegisterModule<MongoDbModule>();
 
             return builder.Build();

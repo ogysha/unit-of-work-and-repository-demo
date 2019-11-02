@@ -1,21 +1,20 @@
 using Autofac;
-using Data.Mappers.MongoDb;
-using Data.Repositories.MongoDb;
-using MongoDB.Driver;
+using Data.Entities.EF;
+using Data.Mappers.EF;
+using Data.Repositories.EF;
 
-namespace Client.Modules
+namespace Client.EF.Modules
 {
-    public class MongoDbModule : Module
+    public class EFModule : Module
     {
-        private const string ConnectionString = "mongodb://localhost:27017";
-
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<BookRepository>().AsImplementedInterfaces();
             builder.RegisterType<BookMapper>().AsSelf();
+            builder.RegisterType<AuthorMapper>().AsSelf();
             builder.RegisterType<UnitOfWork>().AsImplementedInterfaces()
                 .InstancePerLifetimeScope();
-            builder.Register(c => new MongoClient(ConnectionString))
+            builder.Register(c => new BookStoreDbContext())
                 .InstancePerLifetimeScope();
         }
     }
