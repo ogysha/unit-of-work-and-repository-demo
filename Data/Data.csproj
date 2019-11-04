@@ -100,12 +100,17 @@
       <DependentUpon>201911020547318_AddAuthor.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Repositories\Persisters\AdditionPersister.cs" />
+    <Compile Include="Repositories\Persisters\ChangePersister.cs" />
+    <Compile Include="Repositories\Persisters\RemovalPersister.cs" />
+    <Compile Include="Repositories\Persisters\UpdatePersister.cs" />
     <Compile Include="Repositories\EF\BookRepository.cs" />
     <Compile Include="Repositories\EF\UnitOfWork.cs" />
     <Compile Include="Repositories\MongoDb\BookRepository.cs" />
     <Compile Include="Repositories\MongoDb\MongoClientExtensions.cs" />
     <Compile Include="Repositories\MongoDb\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AbstractUnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -12,7 +12,7 @@ namespace Client.EF
         {
             var builder = new ContainerBuilder();
             builder.RegisterModule<AppCommonModule>();
-            builder.RegisterModule<EFModule>();
+            builder.RegisterModule<EfModule>();
 
             return builder.Build();
         }
