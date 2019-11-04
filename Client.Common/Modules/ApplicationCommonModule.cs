@@ -1,9 +1,9 @@
 using Autofac;
 using Core.Application;
 
-namespace Client.Common
+namespace Client.Common.Modules
 {
-    public class AppCommonModule : Module
+    public class ApplicationCommonModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {

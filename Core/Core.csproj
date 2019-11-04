@@ -50,7 +50,6 @@
     <Compile Include="Domain\Builders\Book\IWithTitle.cs" />
     <Compile Include="Domain\IAggregateRoot.cs" />
     <Compile Include="Domain\IDomainEntity.cs" />
-    <Compile Include="Infrastructure\IAuthorRepository.cs" />
     <Compile Include="Infrastructure\IBookRepository.cs" />
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\IUnitOfWorkRepository.cs" />

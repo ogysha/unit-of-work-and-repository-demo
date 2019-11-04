@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Autofac;
 using Client.Common;
+using Client.Common.Modules;
 using Client.EF.Modules;
 
 namespace Client.EF
@@ -11,7 +12,7 @@ namespace Client.EF
         private static IContainer CompositionRoot()
         {
             var builder = new ContainerBuilder();
-            builder.RegisterModule<AppCommonModule>();
+            builder.RegisterModule<ApplicationCommonModule>();
             builder.RegisterModule<EfModule>();
 
             return builder.Build();
