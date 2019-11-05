@@ -3,12 +3,12 @@ using Core.Infrastructure;
 
 namespace Data.Repositories.Persisters
 {
-    public abstract class ChangePersister
+    public abstract class AbstractPersister
     {
         protected readonly IAggregateRoot AggregateRoot;
-        protected  readonly IUnitOfWorkRepository UnitOfWorkRepository;
+        protected readonly IUnitOfWorkRepository UnitOfWorkRepository;
 
-        protected ChangePersister(IAggregateRoot aggregateRoot, IUnitOfWorkRepository unitOfWorkRepository)
+        protected AbstractPersister(IAggregateRoot aggregateRoot, IUnitOfWorkRepository unitOfWorkRepository)
         {
             AggregateRoot = aggregateRoot;
             UnitOfWorkRepository = unitOfWorkRepository;

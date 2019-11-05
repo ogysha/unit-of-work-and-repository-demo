@@ -7,11 +7,11 @@ namespace Data.Repositories
 {
     public abstract class AbstractUnitOfWork : IUnitOfWork
     {
-        private readonly List<ChangePersister> _changes;
+        private readonly List<AbstractPersister> _changes;
 
         protected AbstractUnitOfWork()
         {
-            _changes = new List<ChangePersister>();
+            _changes = new List<AbstractPersister>();
         }
 
         public void Commit()
