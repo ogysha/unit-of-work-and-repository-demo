@@ -1,7 +1,7 @@
 using Core.Domain;
 using Core.Infrastructure;
 
-namespace Data.Repositories.Persisters
+namespace Data.Repositories.Changes
 {
     internal  class Update : Change
     {

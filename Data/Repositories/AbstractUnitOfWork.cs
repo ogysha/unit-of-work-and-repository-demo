@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Core.Domain;
 using Core.Infrastructure;
-using Data.Repositories.Persisters;
+using Data.Repositories.Changes;
 
 namespace Data.Repositories
 {
