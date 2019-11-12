@@ -100,10 +100,10 @@
       <DependentUpon>201911020547318_AddAuthor.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Repositories\Persisters\AdditionPersister.cs" />
-    <Compile Include="Repositories\Persisters\AbstractPersister.cs" />
-    <Compile Include="Repositories\Persisters\RemovalPersister.cs" />
-    <Compile Include="Repositories\Persisters\UpdatePersister.cs" />
+    <Compile Include="Repositories\Persisters\Addition.cs" />
+    <Compile Include="Repositories\Persisters\Change.cs" />
+    <Compile Include="Repositories\Persisters\Removal.cs" />
+    <Compile Include="Repositories\Persisters\Update.cs" />
     <Compile Include="Repositories\EF\BookRepository.cs" />
     <Compile Include="Repositories\EF\UnitOfWork.cs" />
     <Compile Include="Repositories\MongoDb\BookRepository.cs" />

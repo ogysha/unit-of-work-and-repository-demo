@@ -3,14 +3,14 @@ using Core.Infrastructure;
 
 namespace Data.Repositories.Persisters
 {
-    internal class AdditionPersister : AbstractPersister
+    internal class Addition : Change
     {
-        internal AdditionPersister(IAggregateRoot aggregateRoot, IUnitOfWorkRepository unitOfWorkRepository) : base(
+        internal Addition(IAggregateRoot aggregateRoot, IUnitOfWorkRepository unitOfWorkRepository) : base(
             aggregateRoot, unitOfWorkRepository)
         {
         }
 
-        public override void Persist()
+        public override void Apply()
         {
             UnitOfWorkRepository.PersistCreationOf(AggregateRoot);
         }

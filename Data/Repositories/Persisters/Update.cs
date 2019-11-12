@@ -3,14 +3,14 @@ using Core.Infrastructure;
 
 namespace Data.Repositories.Persisters
 {
-    internal  class UpdatePersister : AbstractPersister
+    internal  class Update : Change
     {
-        internal  UpdatePersister(IAggregateRoot aggregateRoot, IUnitOfWorkRepository unitOfWorkRepository) : base(
+        internal  Update(IAggregateRoot aggregateRoot, IUnitOfWorkRepository unitOfWorkRepository) : base(
             aggregateRoot, unitOfWorkRepository)
         {
         }
 
-        public override void Persist()
+        public override void Apply()
         {
             UnitOfWorkRepository.PersistUpdateOf(AggregateRoot);
         }

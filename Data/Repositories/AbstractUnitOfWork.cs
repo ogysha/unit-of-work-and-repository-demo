@@ -7,17 +7,17 @@ namespace Data.Repositories
 {
     public abstract class AbstractUnitOfWork : IUnitOfWork
     {
-        private readonly List<AbstractPersister> _changes;
+        private readonly List<Change> _changes;
 
         protected AbstractUnitOfWork()
         {
-            _changes = new List<AbstractPersister>();
+            _changes = new List<Change>();
         }
 
         public void Commit()
         {
             OpenTransaction();
-            foreach (var change in _changes) change.Persist();
+            foreach (var change in _changes) change.Apply();
             CommitTransaction();
         }
 
@@ -28,17 +28,17 @@ namespace Data.Repositories
 
         public void RegisterAdded(IAggregateRoot entity, IUnitOfWorkRepository unitOfWorkRepository)
         {
-            _changes.Add(new AdditionPersister(entity, unitOfWorkRepository));
+            _changes.Add(new Addition(entity, unitOfWorkRepository));
         }
 
         public void RegisterUpdated(IAggregateRoot entity, IUnitOfWorkRepository unitOfWorkRepository)
         {
-            _changes.Add(new UpdatePersister(entity, unitOfWorkRepository));
+            _changes.Add(new Update(entity, unitOfWorkRepository));
         }
 
         public void RegisterRemoved(IAggregateRoot entity, IUnitOfWorkRepository unitOfWorkRepository)
         {
-            _changes.Add(new RemovalPersister(entity, unitOfWorkRepository));
+            _changes.Add(new Removal(entity, unitOfWorkRepository));
         }
 
         protected abstract void OpenTransaction();

@@ -3,14 +3,14 @@ using Core.Infrastructure;
 
 namespace Data.Repositories.Persisters
 {
-    internal class RemovalPersister : AbstractPersister
+    internal class Removal : Change
     {
-        internal  RemovalPersister(IAggregateRoot aggregateRoot, IUnitOfWorkRepository unitOfWorkRepository) : base(
+        internal  Removal(IAggregateRoot aggregateRoot, IUnitOfWorkRepository unitOfWorkRepository) : base(
             aggregateRoot, unitOfWorkRepository)
         {
         }
 
-        public override void Persist()
+        public override void Apply()
         {
             UnitOfWorkRepository.PersistDeletionOf(AggregateRoot);
         }

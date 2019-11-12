@@ -3,17 +3,17 @@ using Core.Infrastructure;
 
 namespace Data.Repositories.Persisters
 {
-    public abstract class AbstractPersister
+    public abstract class Change
     {
         protected readonly IAggregateRoot AggregateRoot;
         protected readonly IUnitOfWorkRepository UnitOfWorkRepository;
 
-        protected AbstractPersister(IAggregateRoot aggregateRoot, IUnitOfWorkRepository unitOfWorkRepository)
+        protected Change(IAggregateRoot aggregateRoot, IUnitOfWorkRepository unitOfWorkRepository)
         {
             AggregateRoot = aggregateRoot;
             UnitOfWorkRepository = unitOfWorkRepository;
         }
 
-        public abstract void Persist();
+        public abstract void Apply();
     }
 }
